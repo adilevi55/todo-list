@@ -1,0 +1,20 @@
+<section fxLayout='column'>
+
+  <header>
+    <div class="text-box">
+      <h1 class="heading-primary">
+        <span class="heading-primary-main">TodoList</span>
+        <span class="heading-primary-sub">Todolist application</span>
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <app-add-task (SendTask)="onAddTask($event)"></app-add-task>
+    <app-task-list [taskAdd]="taskGoingToAdd"></app-task-list>
+  </main>
+
+  <footer>
+    <h1>Adi Levi &copy;</h1>
+  </footer>
+</section>

@@ -1,0 +1,14 @@
+<div *ngIf="taskList.length > 0" cdkDropList class="task-list" (cdkDropListDropped)="drop($event)">
+
+    <div class="task-card" *ngFor="let t of taskList" cdkDrag>
+        <div class="task-titel-date-div">
+            <h1 [className]="t.completed ? 'checked' : ''">{{t.	title}}</h1>
+            <p [className]="t.completed ? 'checked' : ''">{{t.date | date }}</p>
+        </div>
+        <p id="descriptionP" [className]="t.completed ? 'checked' : ''">{{t.description}}</p>
+        <div class="task-icons">
+            <mat-checkbox [checked]="t.completed" (change)="onChange($event,t)"></mat-checkbox>
+            <i (click)="deleteTask(t)" class="material-icons">delete_outline</i>
+        </div>
+    </div>
+</div>
